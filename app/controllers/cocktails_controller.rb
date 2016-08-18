@@ -12,5 +12,13 @@ class CocktailsController < ApplicationController
   end
 
   def create
+    Cocktail.create(cocktail_parameters)
+    redirect_to action: "index"
+  end
+
+  private
+
+  def cocktail_parameters
+    params.require(:cocktail).permit(:name)
   end
 end
