@@ -1,8 +1,11 @@
-<h1>All The Cocktails</h1>
-
-
-<h3><%= link_to "Make a Cocktail", new_cocktail_path %></h3>
-
+<div class="page-header">
+  <h1>All The Cocktails<small>Mr.Cocktail</small></h1>
+</div>
+<div>
+  <h3><%= link_to "Make a Cocktail", new_cocktail_path %></h3>
+</div>
 <% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+  <div>
+    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+  </div>
 <% end %>

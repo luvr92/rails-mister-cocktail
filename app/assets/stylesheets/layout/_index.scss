@@ -1,3 +1,10 @@
 @import "utilities";
 @import "footer";
 @import "navbar";
+
+#page-content {
+  text-align: center;
+  margin: 50px;
+  border: 1px solid gray;
+  padding: 30px;
+}
