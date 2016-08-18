@@ -1,2 +1,14 @@
 <h1>Cocktails#show</h1>
 <p>Find me in app/views/cocktails/show.html.erb</p>
+
+
+<h1><%= @cocktail.name %></h1>
+
+<%= link_to "new dose", new_cocktail_dose(@cocktail) %>
+
+<% @doses.each do |dose| %>
+  <h3><%= dose.ingredient.name dose.description %></h3>
+  <p><%= link_to "edit", edit_cocktail_dose(dose) %></p>
+  <p><%= link_to "delete", cocktail_dose(dose), method: :destroy %></p>
+<% end %>
+
