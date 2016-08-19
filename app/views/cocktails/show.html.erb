@@ -1,6 +1,11 @@
-<h1><%= @cocktail.name %></h1>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=  cl_image_path @cocktail.photo,  crop: :fill  %>');">
+  <div class="card-category">Cocktail</div>
+  <div class="card-description">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
 <div>
-  <button id="new-dose">New Dose</button>
+  <button id="new-dose" style="margin: 20px;">New Dose</button>
   <div id="dose-form" class="hidden">
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :ingredient_id, collection: Ingredient.all %>
@@ -20,3 +25,7 @@
 <button class="btn btn-alarm">
 <%= link_to "Go Back", cocktails_path %>
 </button>
+
+
+
+
