@@ -1,11 +1,30 @@
 <div class="page-header">
-  <h1>All The Cocktails<small>Mr.Cocktail</small></h1>
+  <h1>Cocktails <small>By Mr.Cocktail</small></h1>
 </div>
 <div>
   <h3><%= link_to "Make a Cocktail", new_cocktail_path %></h3>
 </div>
-<% @cocktails.each do |cocktail| %>
-  <div>
-    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+          <div class="card-category">Cocktail</div>
+          <div class="card-description">
+            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+            <% cocktail.doses.each do |dose| %>
+              <p><%= dose.ingredient.name %> <%= dose.description %></p>
+            <% end %>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+
+
+
+<h3></h3>
